@@ -1,27 +1,27 @@
-#include "DoiTuong.h"
+#include "PhanTu.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
-void DoiTuong::Input()
+void PhanTu::Input()
 {
 }
 
-void DoiTuong::Output()
+void PhanTu::Output()
 {
 }
 
-float DoiTuong::SatThuong(DoiTuong*)
-{
-	return 0.0f;
-}
-
-float DoiTuong::MucSatThuong()
+float PhanTu::SatThuong(PhanTu*)
 {
 	return 0.0f;
 }
 
-void DoiTuong::SetHe(int Loai)
+float PhanTu::MucSatThuong()
+{
+	return 0.0f;
+}
+
+void PhanTu::SetHe(int Loai)
 {
 	switch (Loai)
 	{
@@ -44,7 +44,7 @@ void DoiTuong::SetHe(int Loai)
 	}
 }
 
-He* DoiTuong::GetHe()
+He* PhanTu::GetHe()
 {
 	return mpHe;
 }
@@ -52,8 +52,11 @@ He* DoiTuong::GetHe()
 void NhanVat::Input()
 {
 	cin.ignore();
-	cout << "Nhap ten: ";
-	getline(cin, Ten);
+	do
+	{
+		cout << "Nhap ten: ";
+		getline(cin, Ten);
+	} while (Ten == "");
 
 	cout << "Nhap cap do: ";
 	cin >> iCapDo;
@@ -74,78 +77,78 @@ void NhanVat::Input()
 	cout << "Nhap mon phai: " << endl;
 	switch (Loai)
 	{
-		case 1:
-		{	
-			mpHe = new Kim;
-			HeName = "Kim";
-			cout << "1. Thieu Lam" << endl;
-			cout << "2. Thien Vuong bang" << endl;
-			cout << "Chon 1 so trong 2 so tren: ";
-			cin >> MonPhai;
-			if (MonPhai == 1)
-				mpMonPhai = "Thieu Lam";
-			else
-				mpMonPhai = "Thien Vuong bang";
-			break;
-		}
-		case 2:
-		{
-			mpHe = new Moc;
-			HeName = "Moc";
-			cout << "1. Ngu Doc Giao" << endl;
-			cout << "2. Duong Mon" << endl;
-			cout << "Chon 1 so trong 2 so tren: ";
-			cin >> MonPhai;
-			if (MonPhai == 1)
-				mpMonPhai = "Ngu Doc Giao";
-			else
-				mpMonPhai = "Duong Mon";
-			break;
-		}
-		case 3:
-		{
-			mpHe = new Thuy;
-			HeName = "Thuy";
-			cout << "1. Nga My" << endl;
-			cout << "2. Thuy Yen Mon" << endl;
-			cout << "Chon 1 so trong 2 so tren: ";
-			cin >> MonPhai;
-			if (MonPhai == 1)
-				mpMonPhai = "Nga My";
-			else
-				mpMonPhai = "Thuy Yen Mon";
-			break;
-		}
-		case 4:
-		{
-			mpHe = new Hoa;
-			HeName = "Hoa";
-			cout << "1. Cai Bang" << endl;
-			cout << "2. Thien Nhan giao" << endl;
-			cout << "Chon 1 so trong 2 so tren: ";
-			cin >> MonPhai;
-			if (MonPhai == 1)
-				mpMonPhai = "Cai Bang";
-			else
-				mpMonPhai = "Thien Nhan giao";
-			break;
-		}
-		case 5:
-		{
-			mpHe = new Tho;
-			HeName = "Tho";
-			cout << "1. Con Lon" << endl;
-			cout << "2. Vo Dang" << endl;
-			cout << "Chon 1 so trong 2 so tren: ";
-			cin >> MonPhai;
-			if (MonPhai == 1)
-				mpMonPhai = "Con Lon";
-			else
-				mpMonPhai = "Vo Dang";
-			break;
-		}
-		default:
-			break;
+	case 1:
+	{
+		mpHe = new Kim;
+		HeName = "Kim";
+		cout << "1. Thieu Lam" << endl;
+		cout << "2. Thien Vuong bang" << endl;
+		cout << "Chon 1 so trong 2 so tren: ";
+		cin >> MonPhai;
+		if (MonPhai == 1)
+			mpMonPhai = "Thieu Lam";
+		else
+			mpMonPhai = "Thien Vuong bang";
+		break;
+	}
+	case 2:
+	{
+		mpHe = new Moc;
+		HeName = "Moc";
+		cout << "1. Ngu Doc Giao" << endl;
+		cout << "2. Duong Mon" << endl;
+		cout << "Chon 1 so trong 2 so tren: ";
+		cin >> MonPhai;
+		if (MonPhai == 1)
+			mpMonPhai = "Ngu Doc Giao";
+		else
+			mpMonPhai = "Duong Mon";
+		break;
+	}
+	case 3:
+	{
+		mpHe = new Thuy;
+		HeName = "Thuy";
+		cout << "1. Nga My" << endl;
+		cout << "2. Thuy Yen Mon" << endl;
+		cout << "Chon 1 so trong 2 so tren: ";
+		cin >> MonPhai;
+		if (MonPhai == 1)
+			mpMonPhai = "Nga My";
+		else
+			mpMonPhai = "Thuy Yen Mon";
+		break;
+	}
+	case 4:
+	{
+		mpHe = new Hoa;
+		HeName = "Hoa";
+		cout << "1. Cai Bang" << endl;
+		cout << "2. Thien Nhan giao" << endl;
+		cout << "Chon 1 so trong 2 so tren: ";
+		cin >> MonPhai;
+		if (MonPhai == 1)
+			mpMonPhai = "Cai Bang";
+		else
+			mpMonPhai = "Thien Nhan giao";
+		break;
+	}
+	case 5:
+	{
+		mpHe = new Tho;
+		HeName = "Tho";
+		cout << "1. Con Lon" << endl;
+		cout << "2. Vo Dang" << endl;
+		cout << "Chon 1 so trong 2 so tren: ";
+		cin >> MonPhai;
+		if (MonPhai == 1)
+			mpMonPhai = "Con Lon";
+		else
+			mpMonPhai = "Vo Dang";
+		break;
+	}
+	default:
+		break;
 	}
 	cout << "=====================================" << endl;
 }
@@ -164,7 +167,7 @@ float NhanVat::MucSatThuong()
 	return iCapDo * 5;
 }
 
-float NhanVat::SatThuong(DoiTuong* p)
+float NhanVat::SatThuong(PhanTu* p)
 {
 	float fMST = MucSatThuong();
 	return fMST + fMST * mpHe->TLSatThuong(p->GetHe()) / 100;
@@ -195,28 +198,28 @@ void ThongThuong::Input()
 
 	switch (Loai)
 	{
-		case 1:
-			mpHe = new Kim;
-			HeName = "Kim";
-			break;
-		case 2:
-			mpHe = new Moc;
-			HeName = "Moc";
-			break;
-		case 3:
-			mpHe = new Thuy;
-			HeName = "Thuy";
-			break;
-		case 4:
-			mpHe = new Hoa;
-			HeName = "Hoa";
-			break;
-		case 5:
-			mpHe = new Tho;
-			HeName = "Tho";
-			break;
-		default:
-			break;
+	case 1:
+		mpHe = new Kim;
+		HeName = "Kim";
+		break;
+	case 2:
+		mpHe = new Moc;
+		HeName = "Moc";
+		break;
+	case 3:
+		mpHe = new Thuy;
+		HeName = "Thuy";
+		break;
+	case 4:
+		mpHe = new Hoa;
+		HeName = "Hoa";
+		break;
+	case 5:
+		mpHe = new Tho;
+		HeName = "Tho";
+		break;
+	default:
+		break;
 	}
 }
 
@@ -233,7 +236,7 @@ float ThongThuong::MucSatThuong()
 	return iCapDo * 3;
 }
 
-float ThongThuong::SatThuong(DoiTuong* p)
+float ThongThuong::SatThuong(PhanTu* p)
 {
 	float fMST = MucSatThuong();
 	return fMST + fMST * mpHe->TLSatThuong(p->GetHe()) / 100;
@@ -264,28 +267,28 @@ void DauLinh::Input()
 
 	switch (Loai)
 	{
-		case 1:
-			mpHe = new Kim;
-			HeName = "Kim";
-			break;
-		case 2:
-			mpHe = new Moc;
-			HeName = "Moc";
-			break;
-		case 3:
-			mpHe = new Thuy;
-			HeName = "Thuy";
-			break;
-		case 4:
-			mpHe = new Hoa;
-			HeName = "Hoa";
-			break;
-		case 5:
-			mpHe = new Tho;
-			HeName = "Tho";
-			break;
-		default:
-			break;
+	case 1:
+		mpHe = new Kim;
+		HeName = "Kim";
+		break;
+	case 2:
+		mpHe = new Moc;
+		HeName = "Moc";
+		break;
+	case 3:
+		mpHe = new Thuy;
+		HeName = "Thuy";
+		break;
+	case 4:
+		mpHe = new Hoa;
+		HeName = "Hoa";
+		break;
+	case 5:
+		mpHe = new Tho;
+		HeName = "Tho";
+		break;
+	default:
+		break;
 	}
 }
 
@@ -302,7 +305,7 @@ float DauLinh::MucSatThuong()
 	return iCapDo * 7;
 }
 
-float DauLinh::SatThuong(DoiTuong* p)
+float DauLinh::SatThuong(PhanTu* p)
 {
 	float fMST = MucSatThuong();
 	return fMST + fMST * mpHe->TLSatThuong(p->GetHe()) / 100;

@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-class DoiTuong
+class PhanTu
 {
 protected:
 	string Ten;
@@ -13,13 +13,13 @@ protected:
 public:
 	virtual void Input();
 	virtual void Output();
-	virtual float SatThuong(DoiTuong*) = 0;
+	virtual float SatThuong(PhanTu*) = 0;
 	virtual float MucSatThuong() = 0;
 	void SetHe(int);
 	He* GetHe();
 };
 
-class NhanVat : public DoiTuong
+class NhanVat : public PhanTu
 {
 public:
 	int MonPhai;
@@ -27,23 +27,23 @@ public:
 	void Input();
 	void Output();
 	float MucSatThuong();
-	float SatThuong(DoiTuong*);
+	float SatThuong(PhanTu*);
 };
 
-class ThongThuong :public DoiTuong
+class ThongThuong :public PhanTu
 {
 public:
 	void Input();
 	void Output();
 	float MucSatThuong();
-	float SatThuong(DoiTuong*);
+	float SatThuong(PhanTu*);
 };
 
-class DauLinh :public DoiTuong
+class DauLinh :public PhanTu
 {
 public:
 	void Input();
 	void Output();
 	float MucSatThuong();
-	float SatThuong(DoiTuong*);
+	float SatThuong(PhanTu*);
 };

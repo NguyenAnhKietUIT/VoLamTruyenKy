@@ -139,12 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DoiTuong.h" />
     <ClInclude Include="He.h" />
+    <ClInclude Include="PhanTu.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DoiTuong.cpp" />
     <ClCompile Include="He.cpp" />
+    <ClCompile Include="PhanTu.cpp" />
     <ClCompile Include="VLTK.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
