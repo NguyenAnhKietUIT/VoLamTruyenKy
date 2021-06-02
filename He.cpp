@@ -1,5 +1,9 @@
 #include "He.h"
 
+He::He()
+{
+}
+
 int He::TLSatThuong(He*)
 {
 	return 0;
@@ -8,6 +12,14 @@ int He::TLSatThuong(He*)
 int He::PhanLoai()
 {
 	return 0;
+}
+
+He::~He()
+{
+}
+
+Kim::Kim()
+{
 }
 
 int Kim::PhanLoai()
@@ -26,6 +38,14 @@ int Kim::TLSatThuong(He* m)
 	return 0;
 }
 
+Kim::~Kim()
+{
+}
+
+Moc::Moc()
+{
+}
+
 int Moc::PhanLoai()
 {
 	return 2;
@@ -40,6 +60,14 @@ int Moc::TLSatThuong(He* m)
 	if (m->PhanLoai() == 1)
 		return -20;
 	return 0;
+}
+
+Moc::~Moc()
+{
+}
+
+Thuy::Thuy()
+{
 }
 
 int Thuy::PhanLoai()
@@ -58,6 +86,14 @@ int Thuy::TLSatThuong(He* m)
 	return 0;
 }
 
+Thuy::~Thuy()
+{
+}
+
+Hoa::Hoa()
+{
+}
+
 int Hoa::PhanLoai()
 {
 	return 4;
@@ -74,6 +110,14 @@ int Hoa::TLSatThuong(He* m)
 	return 0;
 }
 
+Hoa::~Hoa()
+{
+}
+
+Tho::Tho()
+{
+}
+
 int Tho::PhanLoai()
 {
 	return 5;
@@ -88,4 +132,8 @@ int Tho::TLSatThuong(He* m)
 	if (m->PhanLoai() == 2)
 		return -20;
 	return 0;
+}
+
+Tho::~Tho()
+{
 }

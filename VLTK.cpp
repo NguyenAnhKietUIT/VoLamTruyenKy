@@ -2,6 +2,7 @@
 #include "He.h"
 #include "PhanTu.h"
 #include <conio.h>
+#include <iomanip>
 using namespace std;
 
 void Input(PhanTu* [], int&);
@@ -31,38 +32,25 @@ int main()
 			case 0: break;
 			case 1:
 			{
-				cout.width(7);
-				cout << left << "|STT";
-				cout << "|";
-				cout.width(18);
-				cout << left << "Loai";
-				cout << "|";
-				cout.width(35);
-				cout << left << "Ten";
-				cout << "|";
-				cout.width(7);
-				cout << left << "He";
-				cout << "|";
-				cout.width(17);
-				cout << left << "Mon phai";
-				cout << "|";
-				cout.width(12);
-				cout << left << "Level";
-				cout << "|";
-				cout.width(12);
-				cout << left << "Sat thuong";
-				cout << "|";
+				cout << "|" << setw(7) << left << "STT";
+				cout << "|" << setw(20) << left << "Loai";
+				cout << "|" << setw(24) << left << "Ten";
+				cout << "|" << setw(6) << left << "He";
+				cout << "|" << setw(16) << left << "Mon phai";
+				cout << "|" << setw(10) << left << "Level";
+				cout << "|" << setw(10) << left << "Sat thuong";
 				cout << endl;
-				cout << "-------------------------------------------------------------------------------------------------------------------" << endl;
+				cout << setfill('-');
+				cout << setw(100) << "-" << endl;
+				cout << setfill(' ');
 				for (int i = 0; i < n; i++)
 				{
-					cout << "|";
-					cout.width(6);
-					cout << left << i + 1;
-					cout << "|";
+					cout << "|" << setw(7) << left << i + 1;
 					arr[i]->Output();
 					cout << endl;
-					cout << "-------------------------------------------------------------------------------------------------------------------" << endl;
+					cout << setfill('-');
+					cout << setw(100) << "-" << endl;
+					cout << setfill(' ');
 				}
 				cout << endl;
 				break;
@@ -129,9 +117,22 @@ void MaxSatThuong(PhanTu* arr[], int n)
 			max = arr[i]->MucSatThuong();
 
 	cout << "\nNhung phan tu co muc sat thuong cao nhat: " << endl;
+	cout << "|" << setw(20) << left << "Loai";
+	cout << "|" << setw(24) << left << "Ten";
+	cout << "|" << setw(6) << left << "He";
+	cout << "|" << setw(16) << left << "Mon phai";
+	cout << "|" << setw(10) << left << "Level";
+	cout << "|" << setw(10) << left << "Sat thuong";
+	cout << endl;
 	for (int i = 0; i < n; i++)
 		if (max == arr[i]->MucSatThuong())
+		{
 			arr[i]->Output();
+			cout << endl;
+			cout << setfill('-');
+			cout << setw(100) << "-" << endl;
+			cout << setfill(' ');
+		}
 }
 
 void SatThuong(PhanTu* arr[], int n)

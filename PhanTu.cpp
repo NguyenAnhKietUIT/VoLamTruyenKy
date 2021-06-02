@@ -6,6 +6,10 @@
 
 using namespace std;
 
+PhanTu::PhanTu()
+{
+}
+
 void PhanTu::Input()
 {
 }
@@ -50,6 +54,14 @@ void PhanTu::SetHe(int Loai)
 He* PhanTu::GetHe()
 {
 	return mpHe;
+}
+
+PhanTu::~PhanTu()
+{
+}
+
+NhanVat::NhanVat()
+{
 }
 
 void NhanVat::Input()
@@ -173,34 +185,22 @@ void NhanVat::Input()
 			break;
 	}
 	SetConsoleTextAttribute(ConsoleColor, 15);
-	cout << "=====================================" << endl;
+	cout << "-----------------------------------------" << endl; 
 }
 
 void NhanVat::Output()
 {
-	cout.width(18);
-	cout << left << "Nguoi choi";
-	cout << "|";
-	cout.width(35);
-	cout << left << this->Ten;
-	cout << "|";
-	cout.width(7);
-	cout << left << this->HeName;
-	cout << "|";
-	cout.width(17);
-	cout << left << this->mpMonPhai;
-	cout << "|";
-	cout.width(12);
-	cout << left << this->iCapDo;
-	cout << "|";
-	cout.width(12);
-	cout << left << this->MucSatThuong();
-	cout << "|";
+	cout << "|" << setw(20) << left << "Nguoi choi";
+	cout << "|" << setw(24) << left << this->Ten;
+	cout << "|" << setw(6) << left << this->HeName;
+	cout << "|" << setw(16) << left << this->mpMonPhai;
+	cout << "|" << setw(10) << left << this->iCapDo;
+	cout << "|" << setw(10) << left << this->MucSatThuong();
 }
 
 float NhanVat::MucSatThuong()
 {
-	return iCapDo * 5;
+	return iCapDo * 5.0f;
 }
 
 float NhanVat::SatThuong(PhanTu* p)
@@ -209,11 +209,22 @@ float NhanVat::SatThuong(PhanTu* p)
 	return fMST + fMST * mpHe->TLSatThuong(p->GetHe()) / 100;
 }
 
+NhanVat::~NhanVat()
+{
+}
+
+ThongThuong::ThongThuong()
+{
+}
+
 void ThongThuong::Input()
 {
 	cin.ignore();
-	cout << "Nhap ten: ";
-	getline(cin, Ten);
+	do
+	{
+		cout << "Nhap ten: ";
+		getline(cin, Ten);
+	} while (Ten == "");
 
 	cout << "Nhap cap do: ";
 	cin >> iCapDo;
@@ -238,7 +249,7 @@ void ThongThuong::Input()
 		cout << "Nhap 1 so 1~5: ";
 		cin >> Loai;
 
-		cout << "=====================================" << endl;
+		cout << "-----------------------------------------" << endl;
 	} while (Loai < 1);
 
 	switch (Loai)
@@ -270,28 +281,17 @@ void ThongThuong::Input()
 
 void ThongThuong::Output()
 {
-	cout.width(18);
-	cout << left << "Quai thong thuong";
-	cout << "|";
-	cout.width(35);
-	cout << left << this->Ten;
-	cout << "|";
-	cout.width(7);
-	cout << left << this->HeName;
-	cout << "|";
-	cout.width(17);
-	cout << "                 |";
-	cout.width(12);
-	cout << left << this->iCapDo;
-	cout << "|";
-	cout.width(12);
-	cout << left << this->MucSatThuong();
-	cout << "|";
+	cout << "|" << setw(20) << left << "Quai thong thuong";
+	cout << "|" << setw(24) << left << this->Ten;
+	cout << "|" << setw(6) << left << this->HeName;
+	cout << "|" << setw(16) << " ";
+	cout << "|" << setw(10) << left << this->iCapDo;
+	cout << "|" << setw(10) << left << this->MucSatThuong();
 }
 
 float ThongThuong::MucSatThuong()
 {
-	return iCapDo * 3;
+	return iCapDo * 3.0f;
 }
 
 float ThongThuong::SatThuong(PhanTu* p)
@@ -300,11 +300,22 @@ float ThongThuong::SatThuong(PhanTu* p)
 	return fMST + fMST * mpHe->TLSatThuong(p->GetHe()) / 100;
 }
 
+ThongThuong::~ThongThuong()
+{
+}
+
+DauLinh::DauLinh()
+{
+}
+
 void DauLinh::Input()
 {
 	cin.ignore();
-	cout << "Nhap ten: ";
-	getline(cin, Ten);
+	do
+	{
+		cout << "Nhap ten: ";
+		getline(cin, Ten);
+	} while (Ten == "");
 
 	cout << "Nhap cap do: ";
 	cin >> iCapDo;
@@ -328,8 +339,7 @@ void DauLinh::Input()
 		SetConsoleTextAttribute(ConsoleColor, 15);
 		cout << "Nhap 1 so 1~5: ";
 		cin >> Loai;
-
-		cout << "=====================================" << endl;
+		cout << "-----------------------------------------" << endl;
 	} while (Loai < 1);
 
 	switch (Loai)
@@ -361,32 +371,25 @@ void DauLinh::Input()
 
 void DauLinh::Output()
 {
-	cout.width(18);
-	cout << left << "Quai dau linh";
-	cout << "|";
-	cout.width(35);
-	cout << left << this->Ten;
-	cout << "|";
-	cout.width(7);
-	cout << left << this->HeName;
-	cout << "|";
-	cout.width(17);
-	cout << "                 |";
-	cout.width(12);
-	cout << left << this->iCapDo;
-	cout << "|";
-	cout.width(12);
-	cout << left << this->MucSatThuong();
-	cout << "|";
+	cout << "|" << setw(20) << left << "Quai dau linh";
+	cout << "|" << setw(24) << left << this->Ten;
+	cout << "|" << setw(6) << left << this->HeName;
+	cout << "|" << setw(16) << " ";
+	cout << "|" << setw(10) << left << this->iCapDo;
+	cout << "|" << setw(10) << left << this->MucSatThuong();
 }
 
 float DauLinh::MucSatThuong()
 {
-	return iCapDo * 7;
+	return iCapDo * 7.0f;
 }
 
 float DauLinh::SatThuong(PhanTu* p)
 {
 	float fMST = MucSatThuong();
 	return fMST + fMST * mpHe->TLSatThuong(p->GetHe()) / 100;
+}
+
+DauLinh::~DauLinh()
+{
 }
