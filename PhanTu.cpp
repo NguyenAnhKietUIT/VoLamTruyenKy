@@ -178,46 +178,24 @@ void NhanVat::Input()
 
 void NhanVat::Output()
 {
-	HANDLE ConsoleColor;
-	ConsoleColor = GetStdHandle(STD_OUTPUT_HANDLE);
-	int a = this->GetHe()->PhanLoai();
-	switch (a)
-	{
-	case 1:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 8);
-		break;
-	}
-	case 2:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 10);
-		break;
-	}
-	case 3:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 11);
-		break;
-	}
-	case 4:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 12);
-		break;
-	}
-	case 5:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 6);
-		break;
-	}
-	default: break;
-	}
-
-	cout << "Ten: " << this->Ten << endl;
-	cout << "Cap: " << this->iCapDo << endl;
-	cout << "Mon Phai: " << this->mpMonPhai << endl;
-	cout << "He: " << this->HeName << endl;
-	cout << "Muc sat thuong: " << this->MucSatThuong() << endl;
-	SetConsoleTextAttribute(ConsoleColor, 15);
-	cout << endl;
+	cout.width(18);
+	cout << left << "Nguoi choi";
+	cout << "|";
+	cout.width(35);
+	cout << left << this->Ten;
+	cout << "|";
+	cout.width(7);
+	cout << left << this->HeName;
+	cout << "|";
+	cout.width(17);
+	cout << left << this->mpMonPhai;
+	cout << "|";
+	cout.width(12);
+	cout << left << this->iCapDo;
+	cout << "|";
+	cout.width(12);
+	cout << left << this->MucSatThuong();
+	cout << "|";
 }
 
 float NhanVat::MucSatThuong()
@@ -292,44 +270,23 @@ void ThongThuong::Input()
 
 void ThongThuong::Output()
 {
-	HANDLE ConsoleColor;
-	ConsoleColor = GetStdHandle(STD_OUTPUT_HANDLE);
-	int a = this->GetHe()->PhanLoai();
-	switch (a)
-	{
-	case 1:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 8);
-		break;
-	}
-	case 2:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 10);
-		break;
-	}
-	case 3:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 11);
-		break;
-	}
-	case 4:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 12);
-		break;
-	}
-	case 5:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 6);
-		break;
-	}
-	default: break;
-	}
-	cout << "Ten: " << this->Ten << endl;
-	cout << "Cap: " << this->iCapDo << endl;
-	cout << "He: " << this->HeName << endl;
-	cout << "Muc sat thuong: " << this->MucSatThuong() << endl;
-	SetConsoleTextAttribute(ConsoleColor, 15);
-	cout << endl;
+	cout.width(18);
+	cout << left << "Quai thong thuong";
+	cout << "|";
+	cout.width(35);
+	cout << left << this->Ten;
+	cout << "|";
+	cout.width(7);
+	cout << left << this->HeName;
+	cout << "|";
+	cout.width(17);
+	cout << "                 |";
+	cout.width(12);
+	cout << left << this->iCapDo;
+	cout << "|";
+	cout.width(12);
+	cout << left << this->MucSatThuong();
+	cout << "|";
 }
 
 float ThongThuong::MucSatThuong()
@@ -404,44 +361,23 @@ void DauLinh::Input()
 
 void DauLinh::Output()
 {
-	HANDLE ConsoleColor;
-	ConsoleColor = GetStdHandle(STD_OUTPUT_HANDLE);
-	int a = this->GetHe()->PhanLoai();
-	switch (a)
-	{
-	case 1:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 8);
-		break;
-	}
-	case 2:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 10);
-		break;
-	}
-	case 3:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 11);
-		break;
-	}
-	case 4:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 12);
-		break;
-	}
-	case 5:
-	{
-		SetConsoleTextAttribute(ConsoleColor, 6);
-		break;
-	}
-	default: break;
-	}
-	cout << "Ten: " << this->Ten << endl;
-	cout << "Cap: " << this->iCapDo << endl;
-	cout << "He: " << this->HeName << endl;
-	cout << "Muc sat thuong: " << this->MucSatThuong() << endl;
-	SetConsoleTextAttribute(ConsoleColor, 15);
-	cout << endl;
+	cout.width(18);
+	cout << left << "Quai dau linh";
+	cout << "|";
+	cout.width(35);
+	cout << left << this->Ten;
+	cout << "|";
+	cout.width(7);
+	cout << left << this->HeName;
+	cout << "|";
+	cout.width(17);
+	cout << "                 |";
+	cout.width(12);
+	cout << left << this->iCapDo;
+	cout << "|";
+	cout.width(12);
+	cout << left << this->MucSatThuong();
+	cout << "|";
 }
 
 float DauLinh::MucSatThuong()

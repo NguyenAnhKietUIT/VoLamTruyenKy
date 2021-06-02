@@ -31,8 +31,39 @@ int main()
 			case 0: break;
 			case 1:
 			{
+				cout.width(7);
+				cout << left << "|STT";
+				cout << "|";
+				cout.width(18);
+				cout << left << "Loai";
+				cout << "|";
+				cout.width(35);
+				cout << left << "Ten";
+				cout << "|";
+				cout.width(7);
+				cout << left << "He";
+				cout << "|";
+				cout.width(17);
+				cout << left << "Mon phai";
+				cout << "|";
+				cout.width(12);
+				cout << left << "Level";
+				cout << "|";
+				cout.width(12);
+				cout << left << "Sat thuong";
+				cout << "|";
+				cout << endl;
+				cout << "-------------------------------------------------------------------------------------------------------------------" << endl;
 				for (int i = 0; i < n; i++)
+				{
+					cout << "|";
+					cout.width(6);
+					cout << left << i + 1;
+					cout << "|";
 					arr[i]->Output();
+					cout << endl;
+					cout << "-------------------------------------------------------------------------------------------------------------------" << endl;
+				}
 				cout << endl;
 				break;
 			}
