@@ -10,6 +10,11 @@ PhanTu::PhanTu()
 {
 }
 
+string PhanTu::getTen()
+{
+	return this->Ten;
+}
+
 void PhanTu::Input()
 {
 }

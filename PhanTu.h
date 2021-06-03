@@ -12,6 +12,7 @@ protected:
 	string HeName;
 public:
 	PhanTu();
+	string getTen();
 	virtual void Input();
 	virtual void Output();
 	virtual float SatThuong(PhanTu*) = 0;

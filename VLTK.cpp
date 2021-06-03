@@ -8,6 +8,7 @@ using namespace std;
 void Input(PhanTu* [], int&);
 void MaxSatThuong(PhanTu* [], int);
 void SatThuong(PhanTu* [], int);
+bool Check(PhanTu* [], int);
 
 int main()
 {
@@ -95,16 +96,19 @@ void Input(PhanTu* arr[], int& n)
 
 		switch (iLoai)
 		{
-			case 1:
-				arr[i] = new NhanVat;
-				break;
-			case 2:
-				arr[i] = new ThongThuong;
-				break;
-			case 3:
-				arr[i] = new DauLinh;
+		case 1:
+			arr[i] = new NhanVat;
+			break;
+		case 2:
+			arr[i] = new ThongThuong;
+			break;
+		case 3:
+			arr[i] = new DauLinh;
 		}
-		arr[i]->Input();
+		do
+		{
+			arr[i]->Input();
+		} while (!Check(arr,i));
 	}
 }
 
@@ -155,4 +159,17 @@ void SatThuong(PhanTu* arr[], int n)
 	cout << arr[iA]->SatThuong(arr[iB]) << endl;
 	cout << "Gia tri sat thuong phan tu 2 len phan tu 1: ";
 	cout << arr[iB]->SatThuong(arr[iA]) << endl;
+}
+
+bool Check(PhanTu* arr[], int i)
+{
+	for (int j = 0; j < i; j++)
+	{
+		if (arr[j]->getTen() == arr[i]->getTen())
+		{
+			cout << "Ten bi trung! Xin thu ten khac!" << endl;
+			return false;
+		}
+	}
+	return true;
 }
