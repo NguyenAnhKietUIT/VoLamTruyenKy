@@ -33,6 +33,10 @@ int main()
 			case 0: break;
 			case 1:
 			{
+				cout << endl;
+				cout << setfill('-');
+				cout << setw(100) << "-" << endl;
+				cout << setfill(' ');
 				cout << "|" << setw(7) << left << "STT";
 				cout << "|" << setw(20) << left << "Loai";
 				cout << "|" << setw(24) << left << "Ten";
@@ -128,6 +132,9 @@ void MaxSatThuong(PhanTu* arr[], int n)
 	cout << "|" << setw(10) << left << "Level";
 	cout << "|" << setw(10) << left << "Sat thuong";
 	cout << endl;
+	cout << setfill('-');
+	cout << setw(100) << "-" << endl;
+	cout << setfill(' ');
 	for (int i = 0; i < n; i++)
 		if (max == arr[i]->MucSatThuong())
 		{
