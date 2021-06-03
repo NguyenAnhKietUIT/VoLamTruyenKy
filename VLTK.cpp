@@ -35,9 +35,9 @@ int main()
 			{
 				cout << endl;
 				cout << setfill('-');
-				cout << setw(101) << "-" << endl;
+				cout << setw(100) << "-" << endl;
 				cout << setfill(' ');
-				cout << "|" << setw(7) << left << "STT";
+				cout << "|" << setw(6) << left << "STT";
 				cout << "|" << setw(20) << left << "Loai";
 				cout << "|" << setw(24) << left << "Ten";
 				cout << "|" << setw(6) << left << "He";
@@ -46,15 +46,15 @@ int main()
 				cout << "|" << setw(10) << left << "Sat thuong" << "|";
 				cout << endl;
 				cout << setfill('-');
-				cout << setw(101) << "-" << endl;
+				cout << setw(100) << "-" << endl;
 				cout << setfill(' ');
 				for (int i = 0; i < n; i++)
 				{
-					cout << "|" << setw(7) << left << i + 1;
+					cout << "|" << setw(6) << left << i + 1;
 					arr[i]->Output();
 					cout << endl;
 					cout << setfill('-');
-					cout << setw(101) << "-" << endl;
+					cout << setw(100) << "-" << endl;
 					cout << setfill(' ');
 				}
 				cout << endl;
