@@ -80,7 +80,7 @@ void Input(PhanTu* arr[], int& n)
 	cout << "Nhap so luong phan tu: ";
 	cin >> n;
 
-	int iLoai;
+	int iLoai = 0;
 	for (int i = 0; i < n; i++)
 	{
 		cout << "Nhap loai: " << endl;
