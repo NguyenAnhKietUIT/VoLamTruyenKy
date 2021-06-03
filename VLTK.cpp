@@ -35,7 +35,7 @@ int main()
 			{
 				cout << endl;
 				cout << setfill('-');
-				cout << setw(100) << "-" << endl;
+				cout << setw(101) << "-" << endl;
 				cout << setfill(' ');
 				cout << "|" << setw(7) << left << "STT";
 				cout << "|" << setw(20) << left << "Loai";
@@ -43,10 +43,10 @@ int main()
 				cout << "|" << setw(6) << left << "He";
 				cout << "|" << setw(16) << left << "Mon phai";
 				cout << "|" << setw(10) << left << "Level";
-				cout << "|" << setw(10) << left << "Sat thuong";
+				cout << "|" << setw(10) << left << "Sat thuong" << "|";
 				cout << endl;
 				cout << setfill('-');
-				cout << setw(100) << "-" << endl;
+				cout << setw(101) << "-" << endl;
 				cout << setfill(' ');
 				for (int i = 0; i < n; i++)
 				{
@@ -54,7 +54,7 @@ int main()
 					arr[i]->Output();
 					cout << endl;
 					cout << setfill('-');
-					cout << setw(100) << "-" << endl;
+					cout << setw(101) << "-" << endl;
 					cout << setfill(' ');
 				}
 				cout << endl;
@@ -125,15 +125,18 @@ void MaxSatThuong(PhanTu* arr[], int n)
 			max = arr[i]->MucSatThuong();
 
 	cout << "\nNhung phan tu co muc sat thuong cao nhat: " << endl;
+	cout << setfill('-');
+	cout << setw(93) << "-" << endl;
+	cout << setfill(' ');
 	cout << "|" << setw(20) << left << "Loai";
 	cout << "|" << setw(24) << left << "Ten";
 	cout << "|" << setw(6) << left << "He";
 	cout << "|" << setw(16) << left << "Mon phai";
 	cout << "|" << setw(10) << left << "Level";
-	cout << "|" << setw(10) << left << "Sat thuong";
+	cout << "|" << setw(10) << left << "Sat thuong" << "|";
 	cout << endl;
 	cout << setfill('-');
-	cout << setw(100) << "-" << endl;
+	cout << setw(93) << "-" << endl;
 	cout << setfill(' ');
 	for (int i = 0; i < n; i++)
 		if (max == arr[i]->MucSatThuong())
@@ -141,7 +144,7 @@ void MaxSatThuong(PhanTu* arr[], int n)
 			arr[i]->Output();
 			cout << endl;
 			cout << setfill('-');
-			cout << setw(100) << "-" << endl;
+			cout << setw(93) << "-" << endl;
 			cout << setfill(' ');
 		}
 }

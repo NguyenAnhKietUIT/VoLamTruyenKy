@@ -200,7 +200,7 @@ void NhanVat::Output()
 	cout << "|" << setw(6) << left << this->HeName;
 	cout << "|" << setw(16) << left << this->mpMonPhai;
 	cout << "|" << setw(10) << left << this->iCapDo;
-	cout << "|" << setw(10) << left << this->MucSatThuong();
+	cout << "|" << setw(10) << left << this->MucSatThuong() << "|";
 }
 
 float NhanVat::MucSatThuong()
@@ -291,7 +291,7 @@ void ThongThuong::Output()
 	cout << "|" << setw(6) << left << this->HeName;
 	cout << "|" << setw(16) << " ";
 	cout << "|" << setw(10) << left << this->iCapDo;
-	cout << "|" << setw(10) << left << this->MucSatThuong();
+	cout << "|" << setw(10) << left << this->MucSatThuong() << "|";
 }
 
 float ThongThuong::MucSatThuong()
@@ -381,7 +381,7 @@ void DauLinh::Output()
 	cout << "|" << setw(6) << left << this->HeName;
 	cout << "|" << setw(16) << " ";
 	cout << "|" << setw(10) << left << this->iCapDo;
-	cout << "|" << setw(10) << left << this->MucSatThuong();
+	cout << "|" << setw(10) << left << this->MucSatThuong() << "|";
 }
 
 float DauLinh::MucSatThuong()
