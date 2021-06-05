@@ -6,6 +6,7 @@
 using namespace std;
 
 void Input(PhanTu* [], int&);
+void ThaoTac(PhanTu* [], int);
 void MaxSatThuong(PhanTu* [], int);
 void SatThuong(PhanTu* [], int);
 bool Check(PhanTu* [], int);
@@ -14,69 +15,10 @@ int main()
 {
 	PhanTu* arr[100]{};
 	int n = 0;
-	int iLuaChon = 0;
 	cout << "Nhap danh sach cac phan tu" << endl;
 	Input(arr, n);
 	system("cls");
-	do
-	{
-		cout << "Danh sach thao tac: " << endl;
-		cout << "0. Thoat chuong trinh" << endl;
-		cout << "1. In danh sach cac phan tu" << endl;
-		cout << "2. Tim phan tu co sat thuong lon nhat" << endl;
-		cout << "3. So sanh sat thuong cua 2 phan tu" << endl;
-		cout << "Nhap thao tac muon thuc hien: ";
-		cin >> iLuaChon;
-
-		switch (iLuaChon)
-		{
-			case 0: break;
-			case 1:
-			{
-				cout << endl;
-				cout << setfill('-');
-				cout << setw(100) << "-" << endl;
-				cout << setfill(' ');
-				cout << "|" << setw(6) << left << "STT";
-				cout << "|" << setw(20) << left << "Loai";
-				cout << "|" << setw(24) << left << "Ten";
-				cout << "|" << setw(6) << left << "He";
-				cout << "|" << setw(16) << left << "Mon phai";
-				cout << "|" << setw(10) << left << "Level";
-				cout << "|" << setw(10) << left << "Sat thuong" << "|";
-				cout << endl;
-				cout << setfill('-');
-				cout << setw(100) << "-" << endl;
-				cout << setfill(' ');
-				for (int i = 0; i < n; i++)
-				{
-					cout << "|" << setw(6) << left << i + 1;
-					arr[i]->Output();
-					cout << endl;
-					cout << setfill('-');
-					cout << setw(100) << "-" << endl;
-					cout << setfill(' ');
-				}
-				cout << endl;
-				break;
-			}
-			case 2:
-			{
-				MaxSatThuong(arr, n);
-				cout << endl;
-				break;
-			}
-			case 3:
-			{
-				SatThuong(arr, n);
-				cout << endl;
-				break;
-			}
-			default:
-				break;
-		}
-	} while (iLuaChon !=0);
-
+	ThaoTac(arr, n);
 	return 0;
 }
 
@@ -114,6 +56,70 @@ void Input(PhanTu* arr[], int& n)
 			arr[i]->Input();
 		} while (!Check(arr,i));
 	}
+}
+
+void ThaoTac(PhanTu* arr[], int n)
+{
+	int iLuaChon = 0;
+	do
+	{
+		cout << "Danh sach thao tac: " << endl;
+		cout << "0. Thoat chuong trinh" << endl;
+		cout << "1. In danh sach cac phan tu" << endl;
+		cout << "2. Tim phan tu co sat thuong lon nhat" << endl;
+		cout << "3. So sanh sat thuong cua 2 phan tu" << endl;
+		cout << "Nhap thao tac muon thuc hien: ";
+		cin >> iLuaChon;
+
+		switch (iLuaChon)
+		{
+		case 0: break;
+		case 1:
+		{
+			cout << setw(60) << "DANH SACH CAC PHAN TU";
+			cout << endl;
+			cout << setfill('-');
+			cout << setw(100) << "-" << endl;
+			cout << setfill(' ');
+			cout << "|" << setw(6) << left << "STT";
+			cout << "|" << setw(20) << left << "Loai";
+			cout << "|" << setw(24) << left << "Ten";
+			cout << "|" << setw(6) << left << "He";
+			cout << "|" << setw(16) << left << "Mon phai";
+			cout << "|" << setw(10) << left << "Level";
+			cout << "|" << setw(10) << left << "Sat thuong" << "|";
+			cout << endl;
+			cout << setfill('-');
+			cout << setw(100) << "-" << endl;
+			cout << setfill(' ');
+			for (int i = 0; i < n; i++)
+			{
+				cout << "|" << setw(6) << left << i + 1;
+				arr[i]->Output();
+				cout << endl;
+				cout << setfill('-');
+				cout << setw(100) << "-" << endl;
+				cout << setfill(' ');
+			}
+			cout << endl;
+			break;
+		}
+		case 2:
+		{
+			MaxSatThuong(arr, n);
+			cout << endl;
+			break;
+		}
+		case 3:
+		{
+			SatThuong(arr, n);
+			cout << endl;
+			break;
+		}
+		default:
+			break;
+		}
+	} while (iLuaChon != 0);
 }
 
 void MaxSatThuong(PhanTu* arr[], int n)

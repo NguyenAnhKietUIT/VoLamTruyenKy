@@ -24,10 +24,11 @@ public:
 
 class NhanVat : public PhanTu
 {
-public:
-	NhanVat();
+private:
 	int MonPhai;
 	string mpMonPhai;
+public:
+	NhanVat();
 	void Input();
 	void Output();
 	float MucSatThuong();
