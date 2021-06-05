@@ -4,7 +4,7 @@ class He
 public:
 	He();
 	virtual int TLSatThuong(He*) = 0; // Hàm nhận tham số là 1 trong 5 hệ: Kim, Mộc, Thủy, Hỏa, Thổ
-	virtual int PhanLoai() = 0; // Phân loại hệ bằng các hằng số: Kim = 1, Mộc = 2, Thủy = 3, Hỏa = 4, Thổ = 5
+	virtual int PhanLoai() = 0; // Hàm trả về các Hệ dưới dạng hằng số: Kim = 1, Mộc = 2, Thủy = 3, Hỏa = 4, Thổ = 5
 	virtual ~He();
 };
 

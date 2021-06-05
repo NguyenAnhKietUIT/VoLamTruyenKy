@@ -1,4 +1,4 @@
-#include "He.h"
+﻿#include "He.h"
 
 He::He()
 {
@@ -11,7 +11,7 @@ int He::TLSatThuong(He*)
 
 int He::PhanLoai()
 {
-	return 0;
+	return 0; //Kim = 1, Mộc = 2, Thủy = 3, Hỏa = 4, Thổ = 5
 }
 
 He::~He()
@@ -30,12 +30,12 @@ int Kim::PhanLoai()
 int Kim::TLSatThuong(He* m)
 {
 	if (m->PhanLoai() == 3)
-		return 10;
+		return 10; //Sát thương gây ra đối với hệ Thủy
 	if (m->PhanLoai() == 2)
-		return 20;
+		return 20; //Sát thương gây ra đối với hệ Mộc
 	if (m->PhanLoai() == 4)
-		return -20;
-	return 0;
+		return -20; //Sát thương phải nhận khi gặp hệ Hỏa
+	return 0; //Sát thương khi gặp đối tượng cùng Hệ
 }
 
 Kim::~Kim()
@@ -54,12 +54,12 @@ int Moc::PhanLoai()
 int Moc::TLSatThuong(He* m)
 {
 	if (m->PhanLoai() == 4)
-		return 10;
+		return 10;  //Sát thương gây ra đối với hệ Hỏa
 	if (m->PhanLoai() == 5)
-		return 20;
+		return 20;  //Sát thương gây ra đối với hệ Thổ
 	if (m->PhanLoai() == 1)
-		return -20;
-	return 0;
+		return -20; //Sát thương phải nhận khi gặp hệ Kim
+	return 0; //Sát thương khi gặp đối tượng cùng Hệ
 }
 
 Moc::~Moc()
@@ -78,12 +78,12 @@ int Thuy::PhanLoai()
 int Thuy::TLSatThuong(He* m)
 {
 	if (m->PhanLoai() == 2)
-		return 10;
+		return 10;  //Sát thương gây ra đối với hệ Mộc
 	if (m->PhanLoai() == 4)
-		return 20;
+		return 20;  //Sát thương gây ra đối với hệ Hỏa
 	if (m->PhanLoai() == 5)
-		return -20;
-	return 0;
+		return -20; //Sát thương phải nhận khi gặp hệ Thổ
+	return 0; //Sát thương khi gặp đối tượng cùng Hệ
 }
 
 Thuy::~Thuy()
@@ -102,12 +102,12 @@ int Hoa::PhanLoai()
 int Hoa::TLSatThuong(He* m)
 {
 	if (m->PhanLoai() == 5)
-		return 10;
+		return 10;  //Sát thương gây ra đối với hệ Thổ
 	if (m->PhanLoai() == 1)
-		return 20;
+		return 20;  //Sát thương gây ra đối với hệ Kim
 	if (m->PhanLoai() == 3)
-		return -20;
-	return 0;
+		return -20; //Sát thương phải nhận khi gặp hệ Thủy
+	return 0; //Sát thương khi gặp đối tượng cùng Hệ
 }
 
 Hoa::~Hoa()
@@ -126,12 +126,12 @@ int Tho::PhanLoai()
 int Tho::TLSatThuong(He* m)
 {
 	if (m->PhanLoai() == 1)
-		return 10;
+		return 10;  //Sát thương gây ra đối với hệ Kim
 	if (m->PhanLoai() == 3)
-		return 20;
+		return 20;  //Sát thương gây ra đối với hệ Thủy
 	if (m->PhanLoai() == 2)
-		return -20;
-	return 0;
+		return -20; //Sát thương phải nhận khi gặp hệ Mộc
+	return 0; //Sát thương khi gặp đối tượng cùng Hệ
 }
 
 Tho::~Tho()

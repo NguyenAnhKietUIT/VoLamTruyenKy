@@ -147,6 +147,9 @@
     <ClCompile Include="PhanTu.cpp" />
     <ClCompile Include="VLTK.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Help.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

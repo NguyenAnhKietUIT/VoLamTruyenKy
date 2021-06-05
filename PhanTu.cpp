@@ -213,7 +213,7 @@ void NhanVat::Output()
 
 float NhanVat::MucSatThuong()
 {
-	return iCapDo * 5.0f;
+	return iCapDo * 5.0f; 
 }
 
 float NhanVat::SatThuong(PhanTu* p)

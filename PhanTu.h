@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "He.h"
 #include <string>
 using namespace std;
@@ -13,10 +13,10 @@ protected:
 public:
 	PhanTu();
 	string getTen();
-	virtual void Input();
-	virtual void Output();
+	virtual void Input(); //Nhập thông tin của phần tử
+	virtual void Output(); //Xuất thông tin của phần tử
 	virtual float SatThuong(PhanTu*) = 0;
-	virtual float MucSatThuong() = 0;
+	virtual float MucSatThuong() = 0; //Hàm tính mức sát thương của phần tử
 	void SetHe(int);
 	He* GetHe();
 	virtual ~PhanTu();

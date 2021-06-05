@@ -1,15 +1,15 @@
-#include <iostream>
+﻿#include <iostream>
 #include "He.h"
 #include "PhanTu.h"
 #include <conio.h>
 #include <iomanip>
 using namespace std;
 
-void Input(PhanTu* [], int&);
-void ThaoTac(PhanTu* [], int);
-void MaxSatThuong(PhanTu* [], int);
-void SatThuong(PhanTu* [], int);
-bool Check(PhanTu* [], int);
+void Input(PhanTu* [], int&); //Nhập các phần tử
+void ThaoTac(PhanTu* [], int); //Danh sách các thao tác cần thực hiện
+void MaxSatThuong(PhanTu* [], int); //Tìm các phần tử có sát thương cao nhất
+void SatThuong(PhanTu* [], int); //So sánh mức sát thương của 2 phần tử 
+bool Check(PhanTu* [], int); //Kiểm tra tên có bị trùng với các phần tử trước hay không
 
 int main()
 {
@@ -17,7 +17,7 @@ int main()
 	int n = 0;
 	cout << "Nhap danh sach cac phan tu" << endl;
 	Input(arr, n);
-	system("cls");
+	system("cls"); //Hàm xóa màn hình
 	ThaoTac(arr, n);
 	return 0;
 }
@@ -43,13 +43,13 @@ void Input(PhanTu* arr[], int& n)
 		switch (iLoai)
 		{
 		case 1:
-			arr[i] = new NhanVat;
+			arr[i] = new NhanVat; //Khởi tạo phần tử loại Nhân Vật
 			break;
 		case 2:
-			arr[i] = new ThongThuong;
+			arr[i] = new ThongThuong; //Khởi tạo phần tử loại Quái Thông Thường
 			break;
 		case 3:
-			arr[i] = new DauLinh;
+			arr[i] = new DauLinh; //Khởi tạo phần tử loại Quái Đầu Lĩnh
 		}
 		do
 		{
@@ -60,7 +60,7 @@ void Input(PhanTu* arr[], int& n)
 
 void ThaoTac(PhanTu* arr[], int n)
 {
-	int iLuaChon = 0;
+	int iLuaChon = 0; 
 	do
 	{
 		cout << "Danh sach thao tac: " << endl;
@@ -92,7 +92,7 @@ void ThaoTac(PhanTu* arr[], int n)
 			cout << setfill('-');
 			cout << setw(100) << "-" << endl;
 			cout << setfill(' ');
-			for (int i = 0; i < n; i++)
+			for (int i = 0; i < n; i++) 
 			{
 				cout << "|" << setw(6) << left << i + 1;
 				arr[i]->Output();
@@ -100,7 +100,7 @@ void ThaoTac(PhanTu* arr[], int n)
 				cout << setfill('-');
 				cout << setw(100) << "-" << endl;
 				cout << setfill(' ');
-			}
+			} //In danh sách các phần tử
 			cout << endl;
 			break;
 		}
@@ -124,11 +124,11 @@ void ThaoTac(PhanTu* arr[], int n)
 
 void MaxSatThuong(PhanTu* arr[], int n)
 {
-	float max = arr[0]->MucSatThuong();
+	float max = arr[0]->MucSatThuong(); //Gán Max là mức sát thương của phần tử đầu tiên
 
-	for (int i = 0; i < n; i++)
-		if (max < arr[i]->MucSatThuong())
-			max = arr[i]->MucSatThuong();
+	for (int i = 0; i < n; i++) 
+		if (max < arr[i]->MucSatThuong()) 
+			max = arr[i]->MucSatThuong(); //Cập nhật lại giá trị Max khi tồn tại phần tử có mức sát thương lớn hơn Max
 
 	cout << "\nNhung phan tu co muc sat thuong cao nhat: " << endl;
 	cout << setfill('-');
@@ -145,30 +145,30 @@ void MaxSatThuong(PhanTu* arr[], int n)
 	cout << setw(93) << "-" << endl;
 	cout << setfill(' ');
 	for (int i = 0; i < n; i++)
-		if (max == arr[i]->MucSatThuong())
+		if (max == arr[i]->MucSatThuong()) 
 		{
-			arr[i]->Output();
+			arr[i]->Output(); 
 			cout << endl;
 			cout << setfill('-');
 			cout << setw(93) << "-" << endl;
 			cout << setfill(' ');
-		}
+		} //Xuất các phần tử có mức sát thương Max
 }
 
 void SatThuong(PhanTu* arr[], int n)
 {
-	int iA, iB;
+	int iA = 0, iB = 0; 
 	cout << endl;
-	cout << "Nhap vi tri 2 phan tu muon so sanh: " << endl;
+	cout << "Nhap vi tri 2 phan tu muon so sanh: " << endl; //Nhập hai giá trị ứng với vị trí trong mảng 
 	do
 	{
 		cout << "Nhap vi tri phan tu 1: ";
 		cin >> iA;
-		cout << "Nhap vi tri phan tu 2: ";
+		cout << "Nhap vi tri phan tu 2: "; 
 		cin >> iB;
-		if (iA < 0 || iA >= n || iB < 0 || iB >= n)
+		if (iA < 0 || iA >= n || iB < 0 || iB >= n)																	
 			cout << "Nhap vi tri sai! Xin vui long nhap lai!" << endl;
-	} while (iA < 0 || iA >= n || iB < 0 || iB >= n);
+	} while (iA < 0 || iA >= n || iB < 0 || iB >= n); //Vị trí của hai phần tử không hợp lệ
 
 	cout << endl;
 	cout << "Gia tri sat thuong phan tu 1 len phan tu 2: ";
@@ -179,13 +179,13 @@ void SatThuong(PhanTu* arr[], int n)
 
 bool Check(PhanTu* arr[], int i)
 {
-	for (int j = 0; j < i; j++)
+	for (int j = 0; j < i; j++) 
 	{
-		if (arr[j]->getTen() == arr[i]->getTen())
+		if (arr[j]->getTen() == arr[i]->getTen()) //Tên của phần tử trùng với tên của phần tử trước đó
 		{
 			cout << "Ten bi trung! Xin thu ten khac!" << endl;
-			return false;
+			return false; //Tên bị trùng
 		}
 	}
-	return true;
+	return true; //Tên hợp lệ
 }

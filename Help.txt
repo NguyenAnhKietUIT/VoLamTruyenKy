@@ -1,0 +1,50 @@
+﻿I - ĐIỀU KIỆN MÔI TRƯỜNG:
+VỀ HỆ ĐIỀU HÀNH:
+- Windows 10 bản Home, Professional, Education, Enterprise với bản build 1507 trở lên.
+
+VỀ PHẦN CỨNG:
+- CPU tốc độ 1.8 GHz trở lên, hai nhân trở lên.
+- RAM tối thiểu 2GB.
+- Ổ cứng khả dụng từ 1GB - 40GB.
+- Độ phân giải máy tối thiếu là 720p (1280x720).
+
+VỀ PHẦN MỀM:
+- .NET 4.5 trở lên.
+
+II - CÁC THAO TÁC THỰC HIỆN:
+- Bước 1: Mở file VoLamTruyenKy.sln.
+- Bước 2: Nhấn tổ hợp phím Ctrl + F5 để chạy chương trình.
+- Bước 3: Nhập n số lượng phần tử (nhân vật và quái) muốn nhập vào: Nhập số nguyên lớn hơn 0.
+- Bước 4: Nhập thông tin của từng phần tử:
+	+ Bước 4.1: Nhập loại của phần tử:
+				Nhập 1 nếu phần tử là Nhân Vật;
+				Nhập 2 nếu phần tử là Quái Thông Thường;
+				Nhập 3 nếu phần tử là Quái Đầu Lĩnh.
+	+ Bước 4.2:  Nếu phần tử là Nhân Vật, ta cần nhập:
+				Tên: kí tự có độ dài nhỏ hơn 25, không được để trống;
+	 			Cấp: số nguyên lớn hơn 0;
+			    Hệ: số nguyên từ 1 đến 5, trong đó:
+				1: Hệ Kim
+				2: Hệ Mộc
+				3: Hệ Thủy
+				4: Hệ Hỏa
+				5: Hệ Thổ
+			    Môn phái: ứng với từng hệ, ta nhập phím 1 hoặc 2.
+
+			     Nếu phần tử là Quái Thông Thường hoặc Quái Đầu Lĩnh, ta cần nhập:
+			    Tên: kí tự có độ dài nhỏ hơn 25, không được để trống;
+	 		    Cấp: số nguyên lớn hơn 0;
+			    Hệ: số nguyên từ 1 đến 5, trong đó:
+				1: Hệ Kim
+				2: Hệ Mộc
+				3: Hệ Thủy
+				4: Hệ Hỏa
+				5: Hệ Thổ
+- Bước 5: Nhập phím 1 để in danh sách các phần tử vừa nhập. (ứng với câu 1)
+- Bước 6: Nhập phím 2 để in các phần tử có sát thương cao nhất. (ứng với câu 2)
+- Bước 7: Nhập phím 3 để so sánh mức sát thương của 2 phần tử. (ứng với câu 3) 
+	+ Bước 7.1: Nhập vị trí của phần tử thứ 1: số nguyên a (0 ≤ a ≤ n);
+	+ Bước 7.2: Nhập vị trí của phần tử thứ 2: số nguyên b ≠ a và 0 ≤ b ≤ n.
+- Bước 8: Nhập phím 0 để thoát chương trình (nếu không cần thực hiện thêm thao tác khác).
+- Bước 9: Nhập phím bất kì để tắt màn hình Console.
+
