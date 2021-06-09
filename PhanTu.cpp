@@ -7,7 +7,7 @@ using namespace std;
 
 PhanTu::PhanTu()
 {
-	iCapDo = 1;
+	CapDo = 1;
 }
 
 string PhanTu::getTen()
@@ -25,7 +25,7 @@ void PhanTu::Input()
 	} while (Ten == "");
 
 	cout << "Nhap cap do: ";
-	cin >> iCapDo;
+	cin >> CapDo;
 
 	cout << "Nhap he ngu hanh: " << endl;
 	HANDLE ConsoleColor;
@@ -48,26 +48,23 @@ void PhanTu::Input()
 		cin >> Loai;
 	} while (Loai < 1 || Loai > 5);
 
+	SetHe(Loai);
+
 	switch (Loai)
 	{
 		case 1:
-			mpHe = new Kim;
 			HeName = "Kim";
 			break;
 		case 2:
-			mpHe = new Moc;
 			HeName = "Moc";
 			break;
 		case 3:
-			mpHe = new Thuy;
 			HeName = "Thuy";
 			break;
 		case 4:
-			mpHe = new Hoa;
 			HeName = "Hoa";
 			break;
 		case 5:
-			mpHe = new Tho;
 			HeName = "Tho";
 			break;
 		default:
@@ -93,28 +90,28 @@ void PhanTu::SetHe(int Loai)
 {
 	switch (Loai)
 	{
-	case 1:
-		mpHe = new Kim;
-		break;
-	case 2:
-		mpHe = new Moc;
-		break;
-	case 3:
-		mpHe = new Thuy;
-		break;
-	case 4:
-		mpHe = new Hoa;
-		break;
-	case 5:
-		mpHe = new Tho;
-		break;
-	default: break;
+		case 1:
+			TenHe = new Kim;
+			break;
+		case 2:
+			TenHe = new Moc;
+			break;
+		case 3:
+			TenHe = new Thuy;
+			break;
+		case 4:
+			TenHe = new Hoa;
+			break;
+		case 5:
+			TenHe = new Tho;
+			break;
+		default: break;
 	}
 }
 
 He* PhanTu::GetHe()
 {
-	return mpHe;
+	return TenHe;
 }
 
 PhanTu::~PhanTu()
@@ -141,9 +138,9 @@ void NhanVat::Input()
 		cout << "Chon 1 so trong 2 so tren: ";
 		cin >> MonPhai;
 		if (MonPhai == 1)
-			mpMonPhai = "Thieu Lam";
+			TenMonPhai = "Thieu Lam";
 		else
-			mpMonPhai = "Thien Vuong bang";
+			TenMonPhai = "Thien Vuong bang";
 	}
 	else if (HeName == "Moc")
 	{
@@ -154,9 +151,9 @@ void NhanVat::Input()
 		cout << "Chon 1 so trong 2 so tren: ";
 		cin >> MonPhai;
 		if (MonPhai == 1)
-			mpMonPhai = "Ngu Doc Giao";
+			TenMonPhai = "Ngu Doc Giao";
 		else
-			mpMonPhai = "Duong Mon";
+			TenMonPhai = "Duong Mon";
 	}
 	else if (HeName == "Thuy")
 	{
@@ -167,9 +164,9 @@ void NhanVat::Input()
 		cout << "Chon 1 so trong 2 so tren: ";
 		cin >> MonPhai;
 		if (MonPhai == 1)
-			mpMonPhai = "Nga My";
+			TenMonPhai = "Nga My";
 		else
-			mpMonPhai = "Thuy Yen Mon";
+			TenMonPhai = "Thuy Yen Mon";
 	}
 	else if (HeName == "Hoa")
 	{
@@ -180,9 +177,9 @@ void NhanVat::Input()
 		cout << "Chon 1 so trong 2 so tren: ";
 		cin >> MonPhai;
 		if (MonPhai == 1)
-			mpMonPhai = "Cai Bang";
+			TenMonPhai = "Cai Bang";
 		else
-			mpMonPhai = "Thien Nhan giao";
+			TenMonPhai = "Thien Nhan giao";
 	}
 	else
 	{
@@ -193,9 +190,9 @@ void NhanVat::Input()
 		cout << "Chon 1 so trong 2 so tren: ";
 		cin >> MonPhai;
 		if (MonPhai == 1)
-			mpMonPhai = "Con Lon";
+			TenMonPhai = "Con Lon";
 		else
-			mpMonPhai = "Vo Dang";
+			TenMonPhai = "Vo Dang";
 	}
 	SetConsoleTextAttribute(ConsoleColor, 15);
 	cout << "-----------------------------------------" << endl;
@@ -206,20 +203,20 @@ void NhanVat::Output()
 	cout << "|" << setw(20) << left << "Nguoi choi";
 	cout << "|" << setw(24) << left << this->Ten;
 	cout << "|" << setw(6) << left << this->HeName;
-	cout << "|" << setw(16) << left << this->mpMonPhai;
-	cout << "|" << setw(10) << left << this->iCapDo;
+	cout << "|" << setw(16) << left << this->TenMonPhai;
+	cout << "|" << setw(10) << left << this->CapDo;
 	cout << "|" << setw(10) << left << this->MucSatThuong() << "|";
 }
 
 float NhanVat::MucSatThuong()
 {
-	return iCapDo * 5.0f; 
+	return CapDo * 5.0f; 
 }
 
 float NhanVat::SatThuong(PhanTu* p)
 {
 	float fMST = MucSatThuong();
-	return fMST + fMST * mpHe->TLSatThuong(p->GetHe()) / 100;
+	return fMST + fMST * TenHe->TLSatThuong(p->GetHe()) / 100;
 }
 
 NhanVat::~NhanVat()
@@ -243,19 +240,19 @@ void ThongThuong::Output()
 	cout << "|" << setw(24) << left << this->Ten;
 	cout << "|" << setw(6) << left << this->HeName;
 	cout << "|" << setw(16) << " ";
-	cout << "|" << setw(10) << left << this->iCapDo;
+	cout << "|" << setw(10) << left << this->CapDo;
 	cout << "|" << setw(10) << left << this->MucSatThuong() << "|";
 }
 
 float ThongThuong::MucSatThuong()
 {
-	return iCapDo * 3.0f;
+	return CapDo * 3.0f;
 }
 
 float ThongThuong::SatThuong(PhanTu* p)
 {
 	float fMST = MucSatThuong();
-	return fMST + fMST * mpHe->TLSatThuong(p->GetHe()) / 100;
+	return fMST + fMST * TenHe->TLSatThuong(p->GetHe()) / 100;
 }
 
 ThongThuong::~ThongThuong()
@@ -279,19 +276,19 @@ void DauLinh::Output()
 	cout << "|" << setw(24) << left << this->Ten;
 	cout << "|" << setw(6) << left << this->HeName;
 	cout << "|" << setw(16) << " ";
-	cout << "|" << setw(10) << left << this->iCapDo;
+	cout << "|" << setw(10) << left << this->CapDo;
 	cout << "|" << setw(10) << left << this->MucSatThuong() << "|";
 }
 
 float DauLinh::MucSatThuong()
 {
-	return iCapDo * 7.0f;
+	return CapDo * 7.0f;
 }
 
 float DauLinh::SatThuong(PhanTu* p)
 {
 	float fMST = MucSatThuong();
-	return fMST + fMST * mpHe->TLSatThuong(p->GetHe()) / 100;
+	return fMST + fMST * TenHe->TLSatThuong(p->GetHe()) / 100;
 }
 
 DauLinh::~DauLinh()

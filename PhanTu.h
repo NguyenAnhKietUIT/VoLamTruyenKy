@@ -7,8 +7,8 @@ class PhanTu
 {
 protected:
 	string Ten;
-	int iCapDo;
-	He* mpHe;
+	int CapDo;
+	He* TenHe;
 	string HeName;
 public:
 	PhanTu();
@@ -26,7 +26,7 @@ class NhanVat : public PhanTu
 {
 private:
 	int MonPhai;
-	string mpMonPhai;
+	string TenMonPhai;
 public:
 	NhanVat();
 	void Input();

@@ -71,6 +71,7 @@ void ThaoTac(PhanTu* arr[], int n)
 		cout << "Nhap thao tac muon thuc hien: ";
 		cin >> iLuaChon;
 
+		system("cls");
 		switch (iLuaChon)
 		{
 		case 0: break;
@@ -170,6 +171,30 @@ void SatThuong(PhanTu* arr[], int n)
 			cout << "Nhap vi tri sai! Xin vui long nhap lai!" << endl;
 	} while (iA < 0 || iA >= n || iB < 0 || iB >= n); //Vị trí của hai phần tử không hợp lệ
 
+	cout << endl;
+	cout << setw(30) << "THONG TIN HAI PHAN TU CAN SO SANH" << endl;
+	cout << setfill('-');
+	cout << setw(93) << "-" << endl;
+	cout << setfill(' ');
+	cout << "|" << setw(20) << left << "Loai";
+	cout << "|" << setw(24) << left << "Ten";
+	cout << "|" << setw(6) << left << "He";
+	cout << "|" << setw(16) << left << "Mon phai";
+	cout << "|" << setw(10) << left << "Level";
+	cout << "|" << setw(10) << left << "Sat thuong" << "|";
+	cout << endl;
+	cout << setfill('-');
+	cout << setw(93) << "-" << endl;
+	cout << setfill(' ');
+	for (int i = 0; i < n; i++)
+		if (i == iA || i == iB)
+		{
+			arr[i]->Output();
+			cout << endl;
+			cout << setfill('-');
+			cout << setw(93) << "-" << endl;
+			cout << setfill(' ');
+		}
 	cout << endl;
 	cout << "Gia tri sat thuong phan tu 1 len phan tu 2: ";
 	cout << arr[iA]->SatThuong(arr[iB]) << endl;
